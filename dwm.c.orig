@@ -422,17 +422,6 @@ attachaside(Client *c) {
 }
 
 void
-attachbelow(Client *c)
-{
-	Client *below = c->mon->clients;
-	for (; below && below->next; below = below->next);
-	if (below)
-		below->next = c;
-	else
-		c->mon->clients = c;
-}
-
-void
 attachstack(Client *c)
 {
 	c->snext = c->mon->stack;
